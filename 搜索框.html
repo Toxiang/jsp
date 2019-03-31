@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>搜索框</title>
+</head>
+<body>
+<input id="1" type="text" value="请输入要搜索的内容：" onblur="Blurs" onfocus="Focus()">
+<script>
+    function Focus() {
+        var input=document.getElementById("1")
+        if (input.value=="请输入要搜索的内容："){
+            input.value=""
+        }
+    };
+    function Blurs() {
+        var ele=document.getElementById("1");
+        var val=ele.value;
+        if(!val.trim()){
+            ele.value="请输入用户名";
+        }
+    }
+    Focus();
+    Blurs();
+</script>
+
+</body>
+</html>

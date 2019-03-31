@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p>今天晚上吃什么水果</p>
+<button onclick="select('all');">全选</button>
+<button onclick="select('cancel');">取消</button>
+<button onclick="select('reverse');">反选</button>
+
+<table border="1" id="Table">
+ <tr>
+     <td><input type="checkbox"></td>
+     <td>西瓜</td>
+ </tr>
+ <tr>
+     <td><input type="checkbox"></td>
+     <td>芒果</td>
+ </tr>
+ <tr>
+     <td><input type="checkbox"></td>
+     <td>菠萝</td>
+ </tr>
+ <tr>
+     <td><input type="checkbox"></td>
+     <td>苹果</td>
+ </tr>
+</table>
+
+
+<script>
+    function select(choice){
+        var ele=document.getElementById("Table");
+
+        var inputs=ele.getElementsByTagName("input");
+        if(choice=="all"){
+            alert("今天晚上吃所有水果！")
+        }
+        for (var i=0;i<inputs.length;i=i+1){
+
+            var ele2=inputs[i];
+            if (choice=="all"){
+                ele2.checked=true;
+
+            }else if(choice=="cancel"){
+                ele2.checked=false;
+            }
+            else {
+                if (ele2.checked){
+                    ele2.checked=false;
+                }else {
+                    ele2.checked=true;
+                }
+            }
+            }
+    }
+</script>
+</body>
+</html>
